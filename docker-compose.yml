@@ -7,6 +7,7 @@ services:
       TZ: UTC
       PGTZ: UTC
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      API_DOMAIN: "localhost:$FRONT_PORT"
     volumes:
       - ./backend/tmp/db:/var/lib/postgresql/data
 
@@ -31,6 +32,7 @@ services:
       args:
         WORKDIR: $WORKDIR
         CONTAINER_PORT: $CONTAINER_PORT
+        API_URL: "http://localhost:$API_PORT"
     command: yarn run dev
     volumes:
       - ./frontend:/$WORKDIR
