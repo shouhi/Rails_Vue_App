@@ -19,6 +19,14 @@ module.exports = {
     "no-extra-semi": "error",
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
-    requireForBlockBody: true
+    requireForBlockBody: true,
+    "space-before-function-paren": [
+      "error",
+      {
+        anonymous: "always",
+        named: "never",
+        asyncArrow: "always"
+      }
+    ]
   }
 };
